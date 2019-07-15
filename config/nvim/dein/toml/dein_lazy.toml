@@ -44,7 +44,18 @@ hook_add = '''
 repo = 'tpope/vim-endwise'
 on_i = 1
 on_ft = ['ruby']
+
 [[plugins]]
 repo = 'deoplete-plugins/deoplete-jedi'
 on_i = 1
 on_ft = ['python3','python']
+
+[[plugins]]
+repo = 'mattn/sonictemplate-vim'
+on_i = 1
+on_cmd = ['Template']
+hook_add = '''
+	let g:sonictemplate_vim_template_dir = [
+\ '$HOME/.config/nvim/template',
+\]
+'''
