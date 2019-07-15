@@ -28,18 +28,6 @@ on_ft = ['ruby']
 
 [[plugins]]
 repo = 'fishbullet/deoplete-ruby'
-hook_source = '''
-	call plug#begin('~/.vim/plugged')
-
-	" Make sure you use single quotes
-	function! DoRemote(arg)
-		UpdateRemotePlugins
-	endfunction
-	Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-	Plug 'fishbullet/deoplete-ruby'
-
-	call plug#end()
-'''
 on_ft = ['ruby']
 
 [[plugins]]
