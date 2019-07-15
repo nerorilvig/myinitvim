@@ -60,12 +60,13 @@ set termguicolors
 set background=dark
 set nofsync "setting to enable to write on mnt directory for macvim
 
-if filereadable(expand('$HOME/.vim/mylib/forperl.vim'))
-  source $HOME/.vim/mylib/forperl.vim
+if filereadable(expand('$HOME/.cache/mylib/forperl.vim'))
+  source $HOME/.config/nvim/mylib/forperl.vim
 endif
+
 set encoding=utf-8
 set fenc=utf-8
-syntax enable "syntax onだと配色が少ない これもvim8.1用に追加した記述
+syntax enable "
 "set nobackup 万が一のために無効化
 set noswapfile
 set autoread
