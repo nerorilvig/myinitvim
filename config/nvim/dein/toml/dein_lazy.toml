@@ -21,3 +21,42 @@ hook_source = '''
 on_i  = 1
 on_ft = ['snippet']
 depends = ['neosnippet-snippets']
+
+[[plugins]]
+repo = 'Shougo/deoplete-rct'
+on_ft = ['ruby']
+
+[[plugins]]
+repo = 'fishbullet/deoplete-ruby'
+hook_source = '''
+	call plug#begin('~/.vim/plugged')
+
+	" Make sure you use single quotes
+	function! DoRemote(arg)
+		UpdateRemotePlugins
+	endfunction
+	Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+	Plug 'fishbullet/deoplete-ruby'
+
+	call plug#end()
+'''
+on_ft = ['ruby']
+
+[[plugins]]
+repo = 'osyo-manga/vim-monster'
+on_i = 1
+hook_add = '''
+	let g:monster#completion#rcodetools#backend = "async_rct_complete"
+	let g:deoplete#sources#omni#input_patterns = {
+  \ "ruby" : '[^. *\t]\.\w*\|\h\w*::',
+  \}
+'''
+
+[[plugins]]
+repo = 'tpope/vim-endwise'
+on_i = 1
+on_ft = ['ruby']
+[[plugins]]
+repo = 'deoplete-plugins/deoplete-jedi'
+on_i = 1
+on_ft = ['python3','python']

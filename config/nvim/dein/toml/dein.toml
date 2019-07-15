@@ -39,12 +39,6 @@ hook_add = '''
 repo = 'c9s/perlomni.vim'
 
 [[plugins]]
-repo = 'tpope/vim-endwise'
-
-[[plugins]]
-repo = 'Shougo/unite.vim'
-
-[[plugins]]
 repo = 'Shougo/neomru.vim'
 
 [[plugins]]
@@ -78,3 +72,6 @@ repo = 'tomasr/molokai'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
