@@ -60,10 +60,6 @@ set termguicolors
 set background=dark
 set nofsync "setting to enable to write on mnt directory for macvim
 
-if filereadable(expand('$HOME/.cache/mylib/forperl.vim'))
-  source $HOME/.config/nvim/mylib/forperl.vim
-endif
-
 set encoding=utf-8
 set fenc=utf-8
 syntax enable "
