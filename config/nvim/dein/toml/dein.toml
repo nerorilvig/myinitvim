@@ -76,8 +76,25 @@ repo = 'rsense/rsense'
 repo = 'tomasr/molokai'
 
 [[plugins]]
+repo = 'cocopon/iceberg.vim'
+
+[[plugins]]
+repo = 'altercation/solarized'
+
+[[plugins]]
+repo = 'sjl/badwolf'
+
+[[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
+
+[[plugins]]
+repo = 'itchyny/vim-parenmatch'
+hook_add = '''
+  let g:loaded_matchparen = 1
+'''
+[[plugins]]
+repo = 'itchyny/vim-cursorword'
 
