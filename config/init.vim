@@ -39,8 +39,8 @@ if dein#check_install()
 endif
 
 " call color scheme
-call dein#source('badwolf')
-"call dein#source('molokai')
+"call dein#source('badwolf')
+call dein#source('molokai')
 
 "End dein Scripts-------------------------
 
@@ -126,11 +126,6 @@ if &term =~ "xterm"
 endif
 "shortcut for esc as jj in insertmode
 inoremap jj <ESC>
-"allow move cursol in insertmode without arrow key
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
 
 "cursorline_setting
 augroup vimrc-auto-cursorline
