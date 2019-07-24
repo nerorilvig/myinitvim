@@ -25,8 +25,13 @@ hook_add = '''
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
+"hook_add = '''
+" noremap <C-N> :NERDTree<CR>
+"'''
+[[plugins]]
+repo = 'jistr/vim-nerdtree-tabs'
 hook_add = '''
-  noremap <C-N> :NERDTree<CR>
+	map <C-n> <plug>NERDTreeTabsToggle<CR>
 '''
 
 [[plugins]]
@@ -75,3 +80,4 @@ repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
+

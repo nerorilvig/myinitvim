@@ -4,7 +4,7 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/home/vagrant/.cache/dein//repos/github.com/Shougo/dein.vim
+set runtimepath+=$HOME/.cache/dein//repos/github.com/Shougo/dein.vim
 let s:dein_dir = expand('~/.cache/dein')
 let s:toml_dir = expand('~/.config/nvim/dein/toml/')
 
@@ -17,7 +17,7 @@ if dein#load_state(s:dein_dir)
 
   " Let dein manage dein
   " Required:
-  call dein#add('/home/vagrant/.cache/dein//repos/github.com/Shougo/dein.vim')
+  call dein#add('$HOME/.cache/dein//repos/github.com/Shougo/dein.vim')
   call dein#load_toml(s:toml, {'lazy': 0})
   call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
@@ -97,6 +97,9 @@ if has('persistent_undo')
 		autocmd BufReadPre ~/* setlocal undofile
 	augroup END
 endif
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+set clipboard=unnamed
 "mouse Setting
 "if has('mouse')
 "    set mouse=a
@@ -124,3 +127,34 @@ if &term =~ "xterm"
 endif
 "shortcut for esc as jj in insertmode
 inoremap jj <ESC>
+
+"cursorline_setting
+augroup vimrc-auto-cursorline
+  autocmd!
+  autocmd CursorMoved,CursorMovedI * call s:auto_cursorline('CursorMoved')
+  autocmd CursorHold,CursorHoldI * call s:auto_cursorline('CursorHold')
+  autocmd WinEnter * call s:auto_cursorline('WinEnter')
+  autocmd WinLeave * call s:auto_cursorline('WinLeave')
+
+  let s:cursorline_lock = 0
+  function! s:auto_cursorline(event)
+    if a:event ==# 'WinEnter'
+      setlocal cursorline
+      let s:cursorline_lock = 2
+    elseif a:event ==# 'WinLeave'
+      setlocal nocursorline
+    elseif a:event ==# 'CursorMoved'
+      if s:cursorline_lock
+        if 1 < s:cursorline_lock
+          let s:cursorline_lock = 1
+        else
+          setlocal nocursorline
+          let s:cursorline_lock = 0
+        endif
+      endif
+    elseif a:event ==# 'CursorHold'
+      setlocal cursorline
+      let s:cursorline_lock = 1
+    endif
+  endfunction
+augroup END
