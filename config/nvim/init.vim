@@ -39,8 +39,9 @@ if dein#check_install()
 endif
 
 " call color scheme
-"call dein#source('badwolf')
-call dein#source('molokai')
+call dein#source('badwolf')
+"call dein#source('molokai')
+"call dein#source('moonshine')
 
 "End dein Scripts-------------------------
 
@@ -157,3 +158,6 @@ augroup vimrc-auto-cursorline
     endif
   endfunction
 augroup END
+
+"html_setting
+"autocmd FileType html	colorscheme molokai

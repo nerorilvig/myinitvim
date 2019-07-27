@@ -79,7 +79,7 @@ repo = 'tomasr/molokai'
 repo = 'cocopon/iceberg.vim'
 
 [[plugins]]
-repo = 'altercation/solarized'
+repo = 'KKPMW/moonshine-vim'
 
 [[plugins]]
 repo = 'sjl/badwolf'
