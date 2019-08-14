@@ -98,3 +98,8 @@ hook_add = '''
 [[plugins]]
 repo = 'itchyny/vim-cursorword'
 
+[[plugins]]
+repo = 'lepture/vim-jinja'
+hook_add = '''
+	au BufNewFile,BufRead *.j2,*.tmpl,*.shtml,*.stm set ft=jinja
+'''
