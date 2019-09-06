@@ -1,3 +1,6 @@
+"set python path
+let g:python3_host_prog = expand('/usr/local/bin/python3')
+let g:python_host_prog = expand('/usr/bin/python')
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved
@@ -39,7 +42,7 @@ if dein#check_install()
 endif
 
 " call color scheme
-call dein#source('badwolf')
+call dein#source('gruvbox')
 "call dein#source('molokai')
 "call dein#source('moonshine')
 
@@ -57,8 +60,9 @@ set termguicolors
 set background=dark
 set nofsync "setting to enable to write on mnt directory for macvim
 
-colorscheme badwolf
+"colorscheme badwolf
 "colorscheme molokai
+colorscheme gruvbox
 
 set encoding=utf-8
 set fenc=utf-8

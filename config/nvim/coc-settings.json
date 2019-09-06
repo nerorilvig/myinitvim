@@ -1,0 +1,30 @@
+{
+  "suggest.timeout": 5000,
+  "languageserver": {
+    "MPLS": {
+      "command": "dotnet",
+      "args": [
+        "exec",
+        "path/to/Microsoft.Python.LanguageServer.dll"
+      ],
+      "filetypes": ["python,python3"],
+      "initializationOptions": {
+        "interpreter": {
+          "properties": {
+            "InterpreterPath": "path/to/python",
+            "DatabasePath": "path/to/MPLS/output/dir",
+            "Version": "{python version}"
+          }
+        },
+        "searchPaths": [
+          "path/to/site-packages",
+          "path/to/app_root"
+        ],
+        "testEnvironment": false,
+        "analysisUpdates": true,
+        "traceLogging": true,
+        "asyncStartup": true,
+      }
+    }
+  }
+}

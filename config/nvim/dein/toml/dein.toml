@@ -58,6 +58,7 @@ hook_add = '''
   let g:quickrun_config = {
             \ 'ruby': { 'command': $HOME.'/bin/ruby' },
             \ 'outputter/buffer/split': '10',
+						\ 'python': {'command': '/usr/local/bin/python3'}
             \ }
   nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
 
@@ -85,6 +86,15 @@ repo = 'KKPMW/moonshine-vim'
 repo = 'sjl/badwolf'
 
 [[plugins]]
+repo = 'ravelll/vim-murk'
+
+[[plugins]]
+repo = 'morhetz/gruvbox'
+hook_add = '''
+  let g:gruvbox_contrast_dark = 'hard'
+'''
+
+[[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
@@ -103,3 +113,25 @@ repo = 'lepture/vim-jinja'
 hook_add = '''
 	au BufNewFile,BufRead *.j2,*.tmpl,*.shtml,*.stm set ft=jinja
 '''
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+build = 'coc#util#install()'
+hook_add = '''
+  nmap <silent> gd <Plug>(coc-definition)
+  nmap <silent> gy <Plug>(coc-type-definition)
+  nmap <silent> gi <Plug>(coc-implementation)
+  nmap <silent> gr <Plug>(coc-references) " Remap for rename current word
+  nmap <leader>rn <Plug>(coc-rename)
+  " Highlight symbol under cursor on CursorHold
+  autocmd CursorHold * silent call CocActionAsync('highlight')
+  " Use K for show documentation in preview window
+  nnoremap <silent> K :call <SID>show_documentation()<CR>
+  function! s:show_documentation()
+    if &filetype == 'vim'
+      execute 'h '.expand('<cword>')
+    else
+      call CocAction('doHover')
+    endif
+  endfunction
+'''
+marge = 0
