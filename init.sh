@@ -5,3 +5,4 @@ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh >
 sh ~/dein_installer.sh ~/.cache/dein
 
 mkdir -p = ~/.config/coc/extensions
+git clone https://github.com/nerorilvig/cheatsheets.git ~/.cheatsheet
