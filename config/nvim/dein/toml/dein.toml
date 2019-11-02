@@ -42,14 +42,14 @@ hook_add = '''
 	command! WkCheat let g:cheatsheet#cheat_file = '~/.cheatsheet/workcheatsheet.txt' | Cheat
 '''
 
-[[plugins]]
-repo = 'c9s/perlomni.vim'
+#[[plugins]]
+#repo = 'c9s/perlomni.vim'
 
 [[plugins]]
 repo = 'Shougo/neomru.vim'
 
-[[plugins]]
-repo = 'hotchpotch/perldoc-vim'
+#[[plugins]]
+#repo = 'hotchpotch/perldoc-vim'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
@@ -66,8 +66,8 @@ hook_add = '''
 
 '''
 
-[[plugins]]
-repo = 'vim-perl/vim-perl'
+#[[plugins]]
+#repo = 'vim-perl/vim-perl'
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'

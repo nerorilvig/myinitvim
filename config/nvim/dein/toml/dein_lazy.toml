@@ -7,6 +7,7 @@ hook_source = '''
   if has('conceal')
     set conceallevel=2 concealcursor=niv
   endif
+	let g:neosnippet#snippets_directory='~/.config/nvim/neosnippet/'
 '''
 on_i  = 1
 on_ft = ['snippet']
@@ -31,9 +32,45 @@ on_ft = ['ruby']
 repo = 'mattn/sonictemplate-vim'
 on_i = 1
 on_cmd = ['Template']
-hook_add = '''
-	let g:sonictemplate_vim_template_dir = [
+hook_add = ''' let g:sonictemplate_vim_template_dir = [
 \ '$HOME/.config/nvim/template',
 \]
 '''
 
+[[plugins]]
+repo = 'alvan/vim-closetag'
+on_i = 1
+on_ft = ['html', 'vue']
+hook_add = '''
+	let g:closetag_filenames = '*.html,*.vue'
+'''
+
+[[plugins]]
+repo = 'godlygeek/tabular'
+on_i = 1
+on_ft = ['markdown']
+
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_i = 1
+on_ft = ['markdown']
+hook_add = '''
+	let g:vim_markdown_no_default_key_mappings = 1
+	let g:vim_markdown_math = 1
+	let g:vim_markdown_frontmatter = 1
+	let g:vim_markdown_toc_autofit = 1
+	let g:vim_markdown_folding_style_pythonic = 1
+'''
+[[plugins]]
+repo = 'kannokanno/previm'
+on_i = 1
+on_ft = ['markdown']
+hook_add = '''
+	let g:previm_open_cmd = 'open -a Firefox'
+'''
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+on_i = 1
+on_ft = ['markdown']

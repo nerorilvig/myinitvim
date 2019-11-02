@@ -1,0 +1,95 @@
+snippet s
+  $${1:scalar}
+snippet h
+  %${1:hash}
+snippet a
+  @${1:array}
+snippet ms
+  my $${1:scalar} = ${2:value};
+snippet mh
+  my %${1:hash} = (${2:hash_elements});
+snippet ma
+  my @${1:array} = (${2:array_elements});
+snippet sl
+  &${1:subloutine}
+snippet rh
+  ${1:rhash} = {${2:hash_elements}};
+snippet ra
+  ${1:rarr} = [${2:array_elements}];
+snippet rs
+  ${1:subloutine} = {${2:code}};
+snippet mrh
+  my ${1:rhash} = {${2:hash_elements}};
+snippet mra
+  my ${1:rarr} = [${2:array_elements}];
+snippet mrs
+  my ${1:rsub} = {
+    ${2:code}
+  };
+snippet ih
+  {${1:hash_elements}}
+snippet ia
+  [${1:array_elements}]
+snippet isl
+  {${1:code}}
+snippet foa
+  for my $${1:element} (@${2:array}){
+
+  }
+snippet foi
+  for(my $i; $i < $${1:num} ; $i++){
+
+  }
+snippet foe
+  foreach my $${1:element} (@${2:array}){
+
+  }
+snippet sub
+  sub ${1:function}{
+    ${2:code}
+  }
+snippet suba
+  sub ${1:function}{
+    my (${2:args}) = @_; 
+    ${3:code}
+  }
+snippet subcon
+  sub ${1:constructor} {
+    my $class = shift;
+    my (${2:args}) = @_;
+
+    my $self = {};
+
+    ${3:code}
+
+    bless $self,$class;
+  }
+snippet bl
+  bless $${1:self},$class;
+
+snippet if
+  if(${1:expression}){
+    ${2:code}
+  }
+snippet ifel
+  if(${1:expression}){
+    ${2:code1}
+  }else{
+    ${3:code2}
+  }
+snippet ifeli
+  if(${1:expression1}){
+    ${2:code1}
+  }elsif(${3:expression2}){
+    ${4:code2}
+  }
+snippet ifelie
+  if(${1:expression1}){
+    ${2:code1}
+  }elsif(${3:expression3}){
+    ${4:code2}
+  }else{
+    ${5:code3}
+  }
+
+include aqua_modules/*

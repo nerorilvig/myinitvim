@@ -104,19 +104,6 @@ endif
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 set clipboard=unnamed
-"mouse Setting
-"if has('mouse')
-"    set mouse=a
-"    if has('mouse_sgr')
-"        set ttymouse=sgr
-"    elseif v:version > 703 || v:version is 703 && has('patch632')
-"        set ttymouse=sgr
-"    else
-"        set ttymouse=xterm2
-"    endif
-"endif
-"mouse setting end
-"paste setting
 if &term =~ "xterm"
     let &t_SI .= "\e[?2004h"
     let &t_EI .= "\e[?2004l"
@@ -162,6 +149,26 @@ augroup vimrc-auto-cursorline
     endif
   endfunction
 augroup END
-
+autocmd BufRead,BufNewFile *.todo setfiletype todo
 "html_setting
 "autocmd FileType html	colorscheme molokai
+"mouse Setting
+"if has('mouse')
+"    set mouse=a
+"    if has('mouse_sgr')
+"        set ttymouse=sgr
+"    elseif v:version > 703 || v:version is 703 && has('patch632')
+"        set ttymouse=sgr
+"    else
+"        set ttymouse=xterm2
+"    endif
+"endif
+"mouse setting end
+"paste setting
+
+"markdown_setting
+autocmd BufRead,BufNewFile *.{mkd,md} set filetype=markdown
+autocmd! FileType markdown hi! def link markdownItalic Normal
+autocmd FileType markdown set commentstring=<\!--\ %s\ -->
+
+" for plasticboy/vim-markdown
